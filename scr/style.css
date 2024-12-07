@@ -1,0 +1,364 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos gerais do corpo e do fundo */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    /* Gradiente suave em tons de rosa claro e branco */
+    background: linear-gradient(45deg, #ffebf0, #ffccd9, #fff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Animação do gradiente de fundo */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilo para os ícones flutuantes */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* Garantir que os ícones não interfiram com outros elementos */
+}
+
+.floating-icon {
+    position: absolute;
+    width: 50px;
+    /* Ajuste o tamanho dos ícones */
+    height: 50px;
+    animation: floatEffect 20s infinite linear;
+    animation-timing-function: linear;
+    opacity: 0.8;
+    /* Tornar os ícones um pouco transparentes para suavizar a visualização */
+}
+
+/* Animação para os ícones flutuando suavemente */
+@keyframes floatEffect {
+    0% {
+        transform: translateY(-100px) translateX(-100px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(200px) translateX(300px) rotate(180deg);
+    }
+
+    50% {
+        transform: translateY(100px) translateX(-50px) rotate(360deg);
+    }
+
+    75% {
+        transform: translateY(-150px) translateX(200px) rotate(540deg);
+    }
+
+    100% {
+        transform: translateY(300px) translateX(-200px) rotate(720deg);
+    }
+}
+
+/* Adicionando um movimento mais aleatório e espalhado para os ícones */
+.floating-icon:nth-child(1) {
+    animation-delay: 0s;
+    top: 5%;
+    left: 10%;
+}
+
+.floating-icon:nth-child(2) {
+    animation-delay: 2s;
+    top: 20%;
+    left: 50%;
+}
+
+.floating-icon:nth-child(3) {
+    animation-delay: 4s;
+    top: 50%;
+    left: 70%;
+}
+
+.floating-icon:nth-child(4) {
+    animation-delay: 6s;
+    top: 80%;
+    left: 20%;
+}
+
+.floating-icon:nth-child(5) {
+    animation-delay: 8s;
+    top: 60%;
+    left: 80%;
+}
+
+.floating-icon:nth-child(6) {
+    animation-delay: 10s;
+    top: 30%;
+    left: 30%;
+}
+
+/* Ajuste para o tamanho de ícones para dispositivos móveis */
+@media (max-width: 600px) {
+    .floating-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+@media (max-height: 500px) {
+    body {
+        margin: 25% 0 25% 0;
+    }
+}
+
+.envelop {
+    width: 15rem;
+    height: 10rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .envelop {
+        width: 20rem;
+        height: 15rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .envelop {
+        width: 25rem;
+        height: 20rem;
+    }
+}
+
+@media (min-width: 600px) and (min-height: 600px) {
+    .envelop {
+        bottom: 20%;
+    }
+}
+
+.envelop__front-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    border: 0.35rem solid #967b5c;
+    background-color: #ba9872;
+    clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
+    z-index: 300;
+}
+
+.envelop__back-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
+    z-index: 100;
+}
+
+.envelop__up-paper {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: relative;
+    border-radius: 0.7rem;
+    background-color: #967b5c;
+    z-index: 400;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
+}
+
+.envelop__sticker {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 400;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+}
+
+@media (max-width: 400px) {
+    .envelop__sticker {
+        background-size: 1.2rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .envelop__sticker {
+        height: 15%;
+    }
+}
+
+.envelop__false-sticker {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    margin: auto;
+    top: 30%;
+    left: 80%;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
+    background-color: #f9f9f9;
+    border: 0.3rem solid #e2e2e2;
+    background-size: 2rem;
+    background-position: center;
+}
+
+@media (max-width: 400px) {
+    .envelop__false-sticker {
+        background-size: 1.2rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .envelop__false-sticker {
+        height: 15%;
+    }
+}
+
+.envelop__content {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 200;
+}
+
+.love-notes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note {
+    width: 95%;
+    height: 30%;
+    background-color: #f9f9f9;
+    position: absolute;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.25s;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.note:nth-child(1) {
+    bottom: 60%;
+}
+
+.note:nth-child(2) {
+    bottom: 40%;
+}
+
+.note:nth-child(3) {
+    bottom: 20%;
+}
+
+.note:hover {
+    cursor: pointer;
+    height: 45%;
+}
+
+.note__text {
+    font-family: "Sofia";
+    padding: 1rem;
+}
+
+.note__text p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+    .note__text p {
+        font-size: 1.025rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .note__text p {
+        font-size: 1.15rem;
+    }
+}
+
+.scissors {
+    cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png") 10 30, pointer;
+}
+
+.scissors:active {
+    cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png") 10 30, pointer;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.scissors {
+    z-index: 999;
+    /* Coloca a tesoura no topo */
+    cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
+}
